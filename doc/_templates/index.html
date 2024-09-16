@@ -6,43 +6,49 @@
     {# Add here landing-page specific stuff that goes in the header (eg css) #}
 {%- endblock extrahead %}
 
-{% block docs_navbar %}
-    {{ super() }}
-
-    {# We add the full-width banner below the navbar, as the div there is
-still full-width (unlike the article) #}
-<div class="container-fluid sk-landing-bg py-4">
-  <div class="container sk-landing-container">
-    <div class="row">
-      <div class="col-md-6 mb-3 mb-md-0 mt-2">
-          <h1 class="sk-landing-header text-white text-monospace">skrub</h1>
-          <h4 class="sk-landing-subheader text-white font-italic mb-3"><i>Prepping tables for machine learning</i></h4>
-      </div>
-      <div class="col-md-6 mb-3 d-flex mt-0 mt-md-3">
-        <ul class="sk-landing-header-body">
-          <li>Pandas and Polars dataframes inputs and outputs</li>
-          <li>scikit-learn compatible</li>
-          <li>Work on heterogenous types (numeric, categorical, dates, text, missing values...)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock docs_navbar %}
-
 {% block docs_main %}
 <div class="container-fluid sk-landing-container">
   <div class="row row-padding-main-container">
-    <div class="col-md-8 mb-3 mb-md-0">
-      <h1 class="hero-title">Less wrangling, more machine learning</h1>
-      <p class="hero-description"><code>skrub</code> is a Python library to ease preprocessing and feature engineering for
-        tabular machine learning.
-        <br />
-        Our long-term goal is to directly connect database tables to machine learning estimators.
-      </p>
+    <h1 class="hero-title">Less wrangling, more machine learning</h1>
+    <p class="hero-description"><code>skrub</code> is a Python library to <em>ease preprocessing</em> and <em>feature engineering</em> for
+      <strong>tabular machine learning</strong>.
+      <br />
+      Our long-term goal is to directly connect database tables to machine learning estimators.
+    </p>
+    <div class="text-center mt-4">
+      <a class="btn sk-btn-blue mb-1" href="{{ pathto('install') }}" role="button">Install <code>skrub</code></a>
+      <a class="btn sk-btn-orange mb-1 me-2" href="{{ pathto('auto_examples/00_getting_started') }}" role="button">Get started</a>
     </div>
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
-      <a class="btn sk-btn-orange mb-1" href="{{ pathto('auto_examples/00_getting_started') }}" role="button">See example</a>
+    <div class="row mt-5">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ pathto('_static/pandas_polars.png', 1) }}" class="card-img-top" alt="DataFrame Input/Output">
+          <div class="card-body">
+            <h5 class="card-title">DataFrame Input/Output</h5>
+            <p class="card-text">Pandas & Polars integration</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ pathto('_static/scikit-learn-logo.svg', 1) }}" class="card-img-top" alt="Scikit-learn compatibility">
+          <div class="card-body">
+            <h5 class="card-title">Scikit-learn</h5>
+            <p class="card-text">Compatible with <code>scikit-learn</code></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ pathto('_static/scikit-learn-logo.svg', 1) }}" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Heterogeneous Tables</h5>
+            <p class="card-text">Numeric, categorical, date, and more</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
     </div>
   </div>
 
